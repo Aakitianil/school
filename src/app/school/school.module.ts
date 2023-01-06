@@ -19,12 +19,14 @@ import { SchoolRoutingModule } from './school-routing.module';
 import { VAccountsComponent } from './v-accounts/v-accounts.component';
 import { CAccountsComponent } from './c-accounts/c-accounts.component';
 import { FormsModule } from '@angular/forms';
+import { VTimetableComponent } from './v-timetable/v-timetable.component';
 
 
 @NgModule({
   declarations: [
     VAccountsComponent,
-    CAccountsComponent
+    CAccountsComponent,
+    VTimetableComponent
   ],
   imports: [
     CommonModule,
