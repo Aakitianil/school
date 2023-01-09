@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { VNewadmissionComponent } from '../v-newadmission/v-newadmission.component';
 import { VAccountsComponent } from './v-accounts/v-accounts.component';
+
 import { VTimetableComponent } from './v-timetable/v-timetable.component';
 
 const routes: Routes = [
@@ -9,6 +11,10 @@ const routes: Routes = [
   },
   {
     path: 'timetable', component: VTimetableComponent, pathMatch: 'full'
+
+  },
+  {
+    path: 'newadmisson',component: VNewadmissionComponent, pathMatch: 'full'
   }
 ];
 

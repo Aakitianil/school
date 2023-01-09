@@ -1,0 +1,68 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile":[ {
+    "name": "typicode"
+  }],
+"NewAdmission":[
+  {
+    "Name":"Mounika",
+    "AdmissionNo":"001" ,
+    "Address": "Hyderabad",
+    "ClassandSection": "1c",
+    "RollNo": "1",
+    "Gender":"Female" ,
+    "ContactNo": "9052667419",
+    "BloodGroup": "0+ve",
+    "Father": "Malyadri",
+    "Mother": "Padmavath",
+    "DOB":"28/8/1991",
+    "DOA":"6/1/2008",
+    "AadharNo":"123456789",
+    "PreviousSchool": "SRIST"
+},
+{
+  "Name":"Mounika",
+  "AdmissionNo":"001" ,
+  "Address": "Hyderabad",
+  "ClassandSection": "1c",
+  "RollNo": "1",
+  "Gender":"Female" ,
+  "ContactNo": "9052667419",
+  "BloodGroup": "0+ve",
+  "Father": "Malyadri",
+  "Mother": "Padmavath",
+  "DOB":"28/8/1991",
+  "DOA":"6/1/2008",
+  "AadharNo":"123456789",
+  "PreviousSchool": "SRIST"
+
+
+
+}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+}

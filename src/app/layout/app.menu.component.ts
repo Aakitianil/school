@@ -2,6 +2,7 @@ import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { LayoutService } from './service/app.layout.service';
 
+
 @Component({
     selector: 'app-menu',
     templateUrl: './app.menu.component.html'
@@ -19,9 +20,10 @@ export class AppMenuComponent implements OnInit {
                 items: [
                     { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
                     { label: 'Accounts', icon: 'pi pi-fw pi-book', routerLink: ['/school/accounts'] },
-                    { label: 'TimeTable', icon: 'pi pi-fw pi-stopwatch', routerLink: ['/school/timetable'] }
-
-                ]
+                    { label: 'TimeTable', icon: 'pi pi-fw pi-stopwatch', routerLink: ['/school/timetable'] },
+                    {label: 'NewAdmission', icon: 'pi pi-fw pi-user-plus', routerLink: ['/school/newadmisson']},
+               
+                 ]
             },
             {
                 label: 'UI Components',

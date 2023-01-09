@@ -20,6 +20,7 @@ import { VAccountsComponent } from './v-accounts/v-accounts.component';
 import { CAccountsComponent } from './c-accounts/c-accounts.component';
 import { FormsModule } from '@angular/forms';
 import { VTimetableComponent } from './v-timetable/v-timetable.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,7 +45,10 @@ import { VTimetableComponent } from './v-timetable/v-timetable.component';
         DropdownModule,
         RadioButtonModule,
         InputNumberModule,
-        DialogModule
+        DialogModule,
+        ReactiveFormsModule,
+        FormsModule
+
   ]
 })
 export class SchoolModule { }

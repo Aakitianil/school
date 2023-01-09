@@ -1,0 +1,155 @@
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h1 class="card-title text-center">Student Enrolment</h1>
+            <p class="card-text">
+           
+                <form [formGroup]="myform">
+                    <div class="form-group1">
+            
+                        <label for="">Name</label>
+                        <input type="text" formControlName="Name" class="form-control1">
+                        <div *ngIf="myform.controls['Name'].touched && myform.controls['Name']?.['errors']" class="invalid">
+                            <div *ngIf="myform.controls['Name']?.['errors']?.['required']"> Name is required </div>
+                            <div *ngIf="myform.controls['Name']?.['errors']?.['minlength']">Username is minimum 4 characters.</div>
+                        </div>
+                    </div>
+            
+                    <div class="form-group2">
+                        <label for="">AdmissionNo</label>
+                        <input type="text" formControlName="AdmissionNo" class="form-control2">
+                        <div *ngIf="myform.controls['AdmissionNo'].touched && myform.controls['AdmissionNo']?.['errors']"
+                            class="invalid">
+                            <div *ngIf="myform.controls['AdmissionNo']?.['errors']?.['required']"> AdmissionNo is required </div>
+                        </div>
+            
+                        <div class="form-group3">
+                            <label for="inputlg">Address</label>
+                            <input type="text" formControlName="Address" class="form-control3">
+                            <div *ngIf="myform.controls['Address'].touched && myform.controls['Address']?.['errors']"
+                                class="invalid">
+                                <div *ngIf="myform.controls['Address']?.['errors']?.['required']"> Address is required </div>
+                            </div>
+                        </div>
+            
+                        <div class="form-group4">
+                            <label for="">Class and Section</label>
+                            <select class="class">
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                            &nbsp;
+                            <select class="section">
+                                <option></option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                            </select>
+            
+            
+                            <div class="form-group5">
+                                <label for="">Gender</label>
+                                <select class="class">
+                                    <option></option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+            
+                                <div class="form-group6">
+                                    <label for="">Roll No</label>
+                                    <input type="text" formControlName="Roll No" class="form-control4">
+                                    <div *ngIf="myform.controls['Roll No'].invalid && myform.controls ['Roll No'].touched">Please
+                                        enter Roll No</div>
+                                </div>
+            
+                                <div class="form-group7">
+                                    <label for="o">Contact No</label>
+                                    <input type="text" formControlName="Contact No" class="form-control5">
+                                    <div *ngIf="myform.controls['Contact No'].invalid && myform.controls ['Contact No'].touched">Please
+                                        enter Contact No</div>
+                                </div>
+            
+                                <div class="form-group8">
+                                    <label for="">Blood Group</label>
+                                    <select class="class">
+                                        <option></option>
+                                        <option>A+</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B-</option>
+                                        <option>O+</option>
+                                        <option>AB+</option>
+                                        <option>AB-</option>
+                                    
+                                    </select>
+                                <p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">
+                                <div class="form-group9">
+                                    <label for="">Father</label>
+                                    <input type="text" formControlName="Father" class="form-control6">
+                                    <div *ngIf="myform.controls['Father'].invalid && myform.controls [''].touched">Please
+                                        enter Father Name</div>
+                                </div>
+                                <div class="form-group10">
+                                    <label for="">Mother</label>
+                                    <input type="text" formControlName="Mother" class="form-control7">
+                                    <div *ngIf="myform.controls['Mother'].invalid && myform.controls ['Mother'].touched">Please
+                                        enter Mother Name</div>
+                                </div>
+                                <div class="form-group11">
+                                    <label for="">DOB</label>
+                                    <input type="Date" formControlName="DOB" class="form-control8">
+                                    <div *ngIf="myform.controls['DOB'].invalid && myform.controls ['DOB'].touched">Please enter
+                                        DOB</div>
+                                </div>
+                                <div class="form-group12">
+                                    <label for="">DOA</label>
+                                    <input type="Date" formControlName="DOA" class="form-control9">
+                                    <div *ngIf="myform.controls['DOA'].invalid && myform.controls ['DOA'].touched">Please enter
+                                        DOA</div>
+                                </div>
+                             
+                                <div class="form-group13">
+                                    <label for="">Adhar No</label>
+                                    <input type="text" formControlName="AdharNo" class="form-control10"> 
+                                    <div *ngIf="myform.controls['AdharNo'].invalid && myform.controls ['AdharNo'].touched">Please
+                                        enter Adhar Number</div>
+                                        </div>
+        
+                                <div class="form-group14">
+                                    <label for="">Previous School</label>
+                                    <input type="text" formControlName="PreviousSchool" class="form-control11">
+                                    <div *ngIf="myform.controls['PreviousSchool'].invalid && myform.controls ['PreviousSchool'].touched">Please
+                                        enter PreviousSchool</div>
+        
+                                    <p>
+                                    </div>
+                                </div>
+                     
+
+       <input type="checkbox" id="Edit" name="Edit" value="Edit"> &nbsp;
+                        <label for="Edit"> Edit</label>
+                        <button id="save">Save</button>
+                    </div>
+            
+                </div>
+                </div>
+    </form>

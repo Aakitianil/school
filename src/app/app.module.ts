@@ -12,14 +12,25 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { VTeacherComponent } from './v-teacher/v-teacher.component';
+import { VNewadmissionComponent } from './v-newadmission/v-newadmission.component';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, VTeacherComponent
+        AppComponent,
+         NotfoundComponent,
+          VTeacherComponent, 
+          VNewadmissionComponent,
+       
     ],
     imports: [
         AppRoutingModule,
-        AppLayoutModule
+        AppLayoutModule,
+        ReactiveFormsModule,
+        FormsModule,
+        BrowserModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
