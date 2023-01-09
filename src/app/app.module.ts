@@ -11,6 +11,7 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
+<<<<<<< Updated upstream
 import { VTeacherComponent } from './v-teacher/v-teacher.component';
 import { VNewadmissionComponent } from './v-newadmission/v-newadmission.component';
 
@@ -31,6 +32,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         ReactiveFormsModule,
         FormsModule,
         BrowserModule
+=======
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
+@NgModule({
+    declarations: [
+        AppComponent, NotfoundComponent,
+    ],
+    imports: [
+        AppRoutingModule,
+        AppLayoutModule,ReactiveFormsModule
+>>>>>>> Stashed changes
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

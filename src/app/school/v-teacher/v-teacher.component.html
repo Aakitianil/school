@@ -1,0 +1,116 @@
+<div class="card">
+  <div class="container-fluid px-1 py-3 mx-auto">
+    <div class="row d-flex justify-content-center">
+      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+        <h3>New Teacher</h3>
+        <p class="blue-text">Add New Teacher</p>
+        <form [formGroup]="regForm">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Name:<span
+                  class="text-danger"> *</span></label> <input type="text" id="fname" name="fname"
+                formControlName="name" class="form-control" placeholder="Enter your first name">
+              <div *ngIf="regForm.controls['name'].touched&&regForm.controls['name']?.['errors']" class="invalid">
+                <div *ngIf="regForm.controls['name']?.['errors']?.['required']">
+
+                  Name is required
+                </div>
+
+                <div *ngIf="regForm.controls['name']?.['errors']?.['minlength']">
+                  Ne name chinnaga undhi
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone No:<span
+                  class="text-danger"> *</span></label> <input type="text" id="lname" name="lname"
+                formControlName="phoneno" class="form-control" placeholder="Enter your number">
+              <div *ngIf="regForm.controls['phoneno'].touched&&regForm.controls['phoneno']?.['errors']" class="invalid">
+                <div *ngIf="regForm.controls['phoneno']?.['errors']?.['required']">
+
+                  Number is not required
+                </div>
+
+                <div *ngIf="regForm.controls['phoneno']?.['errors']?.['minlength']">
+                  Number is very small
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">
+                Speclization<span class="text-danger"> *</span></label> <input type="text" id="email" name="email"
+                formControlName="speclization" class="form-control" placeholder="Sparate with comma(,)">
+              <div *ngIf="regForm.controls['speclization'].touched&&regForm.controls['speclization']?.['errors']"
+                class="invalid">
+                <div *ngIf="regForm.controls['speclization']?.['errors']?.['required']">
+
+                  Name is required
+                </div>
+
+                <div *ngIf="regForm.controls['speclization']?.['errors']?.['minlength']">
+                  Ne name chinnaga undhi
+                </div>
+
+              </div>
+
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Pay
+                Scale<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob"
+                placeholder="Rs." formControlName="payscale" class="form-control">
+              <div *ngIf="regForm.controls['payscale'].touched&&regForm.controls['payscale']?.['errors']"
+                class="invalid">
+                <div *ngIf="regForm.controls['payscale']?.['errors']?.['required']">
+
+                  Number is not required
+                </div>
+
+                <div *ngIf="regForm.controls['payscale']?.['errors']?.['minlength']">
+                  Number is very small
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Address:<span
+                  class="text-danger"> *</span></label> <textarea type="text" id="fname" name="fname" class="address"></textarea>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Aadhar No:<span
+                  class="text-danger"> *</span></label> <input type="text" id="lname" name="lname"
+                placeholder="xxxxxxxx2340" formControlName="aadharno" class="form-control">
+              <div *ngIf="regForm.controls['aadharno'].touched&&regForm.controls['aadharno']?.['errors']"
+                class="invalid">
+                <div *ngIf="regForm.controls['aadharno']?.['errors']?.['required']">
+
+                  Number is not required
+                </div>
+
+                <div *ngIf="regForm.controls['aadharno']?.['errors']?.['minlength']">
+                  Number is very small
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="form-group1 col-sm-6"> <input type="checkbox" class="input">&nbsp; EditDetails </div>
+          </div>
+          <div class="row justify-content-between text-center">
+            <div>
+              
+              <h6 class=" row1 form-control-label px-3"><i class="pi pi-plus-circle" style="font-size: 1rem"></i>
+              Add New Teacher</h6>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>

@@ -18,16 +18,23 @@ import { DialogModule } from 'primeng/dialog';
 import { SchoolRoutingModule } from './school-routing.module';
 import { VAccountsComponent } from './v-accounts/v-accounts.component';
 import { CAccountsComponent } from './c-accounts/c-accounts.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VTimetableComponent } from './v-timetable/v-timetable.component';
+<<<<<<< Updated upstream
 import { ReactiveFormsModule } from '@angular/forms';
+=======
+import { VTeacherComponent } from './v-teacher/v-teacher.component';
+
+>>>>>>> Stashed changes
 
 
 @NgModule({
   declarations: [
     VAccountsComponent,
     CAccountsComponent,
-    VTimetableComponent
+    VTimetableComponent,
+    VTeacherComponent,
+   
   ],
   imports: [
     CommonModule,
@@ -47,8 +54,11 @@ import { ReactiveFormsModule } from '@angular/forms';
         InputNumberModule,
         DialogModule,
         ReactiveFormsModule,
+<<<<<<< Updated upstream
         FormsModule
 
+=======
+>>>>>>> Stashed changes
   ]
 })
 export class SchoolModule { }
