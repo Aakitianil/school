@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VTimetableComponent } from './v-timetable/v-timetable.component';
 
 import { VTeacherComponent } from './v-teacher/v-teacher.component';
+import { CTeacherComponent } from './c-teacher/c-teacher.component';
 
 
 
@@ -31,6 +32,7 @@ import { VTeacherComponent } from './v-teacher/v-teacher.component';
     CAccountsComponent,
     VTimetableComponent,
     VTeacherComponent,
+    CTeacherComponent,
    
   ],
   imports: [
