@@ -11,10 +11,7 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
-<<<<<<< Updated upstream
-import { VTeacherComponent } from './v-teacher/v-teacher.component';
 import { VNewadmissionComponent } from './v-newadmission/v-newadmission.component';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -22,31 +19,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     declarations: [
         AppComponent,
          NotfoundComponent,
-          VTeacherComponent, 
-          VNewadmissionComponent,
-       
-    ],
+        VNewadmissionComponent
+          ],
     imports: [
         AppRoutingModule,
         AppLayoutModule,
         ReactiveFormsModule,
         FormsModule,
         BrowserModule
-=======
-import { ReactiveFormsModule } from '@angular/forms';
-
-
-
-@NgModule({
-    declarations: [
-        AppComponent, NotfoundComponent,
     ],
-    imports: [
-        AppRoutingModule,
-        AppLayoutModule,ReactiveFormsModule
->>>>>>> Stashed changes
-    ],
-    providers: [
+
+    providers:[
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService

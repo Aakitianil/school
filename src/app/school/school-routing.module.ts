@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { VNewadmissionComponent } from '../v-newadmission/v-newadmission.component';
 import { VAccountsComponent } from './v-accounts/v-accounts.component';
-<<<<<<< Updated upstream
-
-=======
 import { VTeacherComponent } from './v-teacher/v-teacher.component';
->>>>>>> Stashed changes
+
 import { VTimetableComponent } from './v-timetable/v-timetable.component';
+
 
 const routes: Routes = [
   {
@@ -17,12 +16,13 @@ const routes: Routes = [
     path: 'timetable', component: VTimetableComponent, pathMatch: 'full'
 
   },
-  {
-<<<<<<< Updated upstream
+  
+{
     path: 'newadmisson',component: VNewadmissionComponent, pathMatch: 'full'
-=======
+},
+{
     path:"teacher",component:VTeacherComponent, pathMatch:'full'
->>>>>>> Stashed changes
+
   }
   
 ];
