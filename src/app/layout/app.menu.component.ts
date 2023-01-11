@@ -22,7 +22,8 @@ export class AppMenuComponent implements OnInit {
                     { label: 'Accounts', icon: 'pi pi-fw pi-book', routerLink: ['/school/accounts'] },
                     { label: 'TimeTable', icon: 'pi pi-fw pi-stopwatch', routerLink: ['/school/timetable'] },
                     {label: 'NewAdmission', icon: 'pi pi-fw pi-user-plus', routerLink: ['/school/newadmisson']},
-                     { label: 'Teacher',icon:'pi pi-fw pi-users', routerLink:['/school/teacher'] }
+                     { label: 'Teacher',icon:'pi pi-fw pi-users', routerLink:['/school/teacher'] },
+                   
                     
 
                 ]

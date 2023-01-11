@@ -3,6 +3,11 @@
         <label for="name">Name</label>
         <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}"/>
         <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Name is required.</small>
+        <div class="field">
+            <label for="name">Phone No</label>
+            <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}"/>
+            <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Number is required.</small>
+        </div>
     </div>
     <div class="field">
         <label for="description">Description</label>

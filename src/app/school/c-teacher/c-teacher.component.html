@@ -1,10 +1,21 @@
-<p>c-teacher works!</p>
-<img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="150" class="mt-0 mx-auto mb-5 block shadow-2" *ngIf="product.image">
+<!-- <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="150" class="mt-0 mx-auto mb-5 block shadow-2" *ngIf="product.image">
 <div class="field">
-    <label for="name">Name</label>
-    <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}"/>
-    <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Name is required.</small>
-</div>
+    <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Name:<span
+              class="text-danger"> *</span></label> <input type="text" id="fname" name="fname"
+            formControlName="name" class="form-control" placeholder="Enter your first name">
+          <div *ngIf="regForm.controls['name'].touched&&regForm.controls['name']?.['errors']" class="invalid">
+            <div *ngIf="regForm.controls['name']?.['errors']?.['required']">
+
+              Name is required
+            </div>
+
+            <div *ngIf="regForm.controls['name']?.['errors']?.['minlength']">
+              Ne name chinnaga undhi
+            </div>
+
+          </div>
+        </div>
 <div class="field">
     <label for="description">Description</label>
     <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3" cols="20"></textarea>
@@ -53,4 +64,9 @@
         <label for="quantity">Quantity</label>
         <p-inputNumber id="quantity" [(ngModel)]="product.quantity"></p-inputNumber>
     </div>
-</div>
+</div> -->
+
+
+
+
+
