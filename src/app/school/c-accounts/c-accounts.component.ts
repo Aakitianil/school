@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/demo/api/product';
 
 @Component({
@@ -7,6 +8,9 @@ import { Product } from 'src/app/demo/api/product';
   styleUrls: ['./c-accounts.component.scss']
 })
 export class CAccountsComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
   products: Product[] = [];
 
   product: Product = {};
@@ -17,13 +21,4 @@ export class CAccountsComponent implements OnInit {
 
 
   statuses: any[] = [];
-
-  constructor() { }
-  
-  ngOnInit(): void {
-    console.log('Method not implemented.');
-  }
-
-  
-
 }

@@ -8,7 +8,7 @@ import { RippleModule } from 'primeng/ripple';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { RatingModule } from 'primeng/rating';
-import { InputTextModule } from 'primeng/inputtext';
+ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -23,6 +23,7 @@ import { VTimetableComponent } from './v-timetable/v-timetable.component';
 
 import { VTeacherComponent } from './v-teacher/v-teacher.component';
 import { CTeacherComponent } from './c-teacher/c-teacher.component';
+import { CardModule } from 'primeng/card';
 
 
 
@@ -53,7 +54,8 @@ import { CTeacherComponent } from './c-teacher/c-teacher.component';
         InputNumberModule,
         DialogModule,
         ReactiveFormsModule,
-
+        CardModule
+     
 
   ]
 })
