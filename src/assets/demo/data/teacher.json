@@ -1,8 +1,13 @@
 {
 "Teacher":{
-    "Anil":"Maths",
-    "Mounika":"Science",
-    "Savanth":"English",
-    "Ramya":"Hindi"
+  "id": "1001",
+  "teacherid": "123456",
+ "name": "Anil",
+  "image": "bamboo-watch.jpg",
+  "subject":"Maths",
+  "aadharno":"123456",
+  "mobileno":"904710774",
+  "gender":"Male"
+
   }
 }

@@ -5,6 +5,8 @@ import { MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { Product } from 'src/app/demo/api/product';
 import { ProductService } from 'src/app/demo/service/product.service';
+import { TeacherService } from 'src/app/demo/service/teacher.service';
+import { Teacher } from '../Model/teacher';
 
 @Component({
   selector: 'app-v-teacher',
@@ -20,11 +22,11 @@ export class VTeacherComponent implements OnInit {
 
     deleteProductsDialog: boolean = false;
 
-    products: Product[] = [];
+    teachers: Teacher[] = [];
 
-    product: Product = {};
+    teacher: Teacher = {};
 
-    selectedProducts: Product[] = [];
+    selectedProducts: Teacher[] = [];
 
     submitted: boolean = false;
 
@@ -34,10 +36,10 @@ export class VTeacherComponent implements OnInit {
 
     rowsPerPageOptions = [5, 10, 20];
 
-    constructor(private productService: ProductService, private messageService: MessageService) { }
+    constructor(private teacherService: TeacherService, private messageService: MessageService) { }
 
     ngOnInit() {
-        this.productService.getProducts().then(data => this.products = data);
+        this.teacherService.getTeacher().then(data => this.teachers = data);
 
         this.cols = [
             { field: 'product', header: 'Product' },
@@ -55,7 +57,7 @@ export class VTeacherComponent implements OnInit {
     }
 
     openNew() {
-        this.product = {};
+        this.teacher = {};
         this.submitted = false;
         this.productDialog = true;
     }
@@ -65,27 +67,27 @@ export class VTeacherComponent implements OnInit {
     }
 
     editProduct(product: Product) {
-        this.product = { ...product };
+        this.teacher = { ...product };
         this.productDialog = true;
     }
 
     deleteProduct(product: Product) {
         this.deleteProductDialog = true;
-        this.product = { ...product };
+        this.teacher = { ...product };
     }
 
     confirmDeleteSelected() {
         this.deleteProductsDialog = false;
-        this.products = this.products.filter(val => !this.selectedProducts.includes(val));
+        this.teachers = this.teachers.filter(val => !this.selectedProducts.includes(val));
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
         this.selectedProducts = [];
     }
 
     confirmDelete() {
         this.deleteProductDialog = false;
-        this.products = this.products.filter(val => val.id !== this.product.id);
+        this.teachers = this.teachers.filter(val => val.id !== this.teacher.id);
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
-        this.product = {};
+        this.teacher = {};
     }
 
     hideDialog() {
@@ -96,32 +98,32 @@ export class VTeacherComponent implements OnInit {
     saveProduct() {
         this.submitted = true;
 
-        if (this.product.name?.trim()) {
-            if (this.product.id) {
+        if (this.teacher.name?.trim()) {
+            if (this.teacher.id) {
                 // @ts-ignore
                 this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value : this.product.inventoryStatus;
-                this.products[this.findIndexById(this.product.id)] = this.product;
+                this.teachers[this.findIndexById(this.teacher.id)] = this.teacher;
                 this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
             } else {
-                this.product.id = this.createId();
-                this.product.code = this.createId();
-                this.product.image = 'product-placeholder.svg';
+                this.teacher.id = this.createId();
+                this.teacher.teacherid = this.createId();
+                this.teacher.image = 'product-placeholder.svg';
                 // @ts-ignore
                 this.product.inventoryStatus = this.product.inventoryStatus ? this.product.inventoryStatus.value : 'INSTOCK';
-                this.products.push(this.product);
+                this.teachers.push(this.teacher);
                 this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
             }
 
-            this.products = [...this.products];
+            this.teachers = [...this.teachers];
             this.productDialog = false;
-            this.product = {};
+            this.teacher= {};
         }
     }
 
     findIndexById(id: string): number {
         let index = -1;
-        for (let i = 0; i < this.products.length; i++) {
-            if (this.products[i].id === id) {
+        for (let i = 0; i < this.teachers.length; i++) {
+            if (this.teachers[i].id === id) {
                 index = i;
                 break;
             }
