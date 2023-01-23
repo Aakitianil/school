@@ -23,6 +23,9 @@ const routes: Routes = [
 {
     path:"teacher",component:VTeacherComponent, pathMatch:'full'
 
+  },
+  {
+    path:"Teacher/:id",component:VTeacherComponent, pathMatch:'full'
   }
   
 ];

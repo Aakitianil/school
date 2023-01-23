@@ -1,13 +1,59 @@
 {
-"Teacher":{
+"Teacher":[
+  {
   "id": "1001",
-  "teacherid": "123456",
- "name": "Anil",
-  "image": "bamboo-watch.jpg",
-  "subject":"Maths",
-  "aadharno":"123456",
-  "mobileno":"904710774",
+  "teacherid": "20230001",
+ "name": "Pavan",
+  "image": "pavan-set.jpg",
+  "subject":"Angular",
+  "aadharno":"346750986721",
+  "mobileno":"8179514408",
   "gender":"Male"
+  },
+  {
+    "id": "1002",
+    "teacherid":  "20230002",
+   "name": "Anil",
+    "image": "anil-set.jpg",
+    "subject":"Html",
+    "aadharno":"867669115805",
+    "mobileno":"904710774",
+    "gender":"Male"
+    },
+    {
+      "id": "1003",
+      "teacherid":  "20230003",
+     "name": "Mounika",
+      "image": "mouni-set.jpg",
+      "subject":"Angular",
+      "aadharno":"789065421230",
+      "mobileno":"9052667419",
+      "gender":"FeMale"
+      },
+      {
+        "id": "1004",
+        "teacherid":  "20230004",
+       "name": "Ramya",
+        "image": "ramya-set.jpg",
+        "subject":"Angular",
+        "aadharno":"889065421230",
+        "mobileno":"8639491283",
+        "gender":"FeMale"
+        },
+        {
+          "id": "1005",
+          "teacherid":  "20230005",
+         "name": "Savanth",
+          "image": "",
+          "subject":"Angular",
+          "aadharno":"489065421230",
+          "mobileno":"8686538146",
+          "gender":"Male"
+          }
+        
+      
+    
+  
 
-  }
+]
 }

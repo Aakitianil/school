@@ -1,6 +1,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+// import * as console from 'console';
 import { MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { Product } from 'src/app/demo/api/product';
@@ -39,10 +40,15 @@ export class VTeacherComponent implements OnInit {
     constructor(private teacherService: TeacherService, private messageService: MessageService) { }
 
     ngOnInit() {
-        this.teacherService.getTeacher().then(data => this.teachers = data);
+        this.teacherService.getTeacher().then((data:Teacher[]) =>{
+            this.teachers = data;
+        console.log("data",this.teachers)
+        });
+            
+        
 
         this.cols = [
-            { field: 'product', header: 'Product' },
+            { field: 'TeacherId', header: 'TeacherId' },
             { field: 'price', header: 'Price' },
             { field: 'category', header: 'Category' },
             { field: 'rating', header: 'Reviews' },

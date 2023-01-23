@@ -1,153 +1,149 @@
 <div class="grid">
-  <div class="col-12">
-      <div class="card px-6 py-6">
-          <p-toast></p-toast>
-          <p-toolbar styleClass="mb-4">
-              <ng-template pTemplate="left">
-                  <div class="my-2">
-                      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"
-                          (click)="openNew()"></button>
-                      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
-                          (click)="deleteSelectedProducts()"
-                          [disabled]="!selectedProducts || !selectedProducts.length"></button>
-                  </div>
-              </ng-template>
+    <div class="col-12">
+        <div class="card px-6 py-6">
+            <p-toast></p-toast>
+            <p-toolbar styleClass="mb-4">
+                <ng-template pTemplate="left">
+                    <div class="my-2">
+                        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"
+                            (click)="openNew()"></button>
+                        <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
+                            (click)="deleteSelectedProducts()"
+                            [disabled]="!selectedProducts || !selectedProducts.length"></button>
+                    </div>
+                </ng-template>
 
-              <ng-template pTemplate="right">
-                  <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import"
-                      chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
-                  <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"
-                      (click)="dt.exportCSV()"></button>
-              </ng-template>
-          </p-toolbar>
+                <ng-template pTemplate="right">
+                    <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import"
+                        chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
+                    <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"
+                        (click)="dt.exportCSV()"></button>
+                </ng-template>
+            </p-toolbar>
 
-          <p-table #dt [value]="teachers" [columns]="cols" responsiveLayout="scroll" [rows]="10"
-              [globalFilterFields]="['name','country.name','representative.name','status']" [rows]="10"
-              [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true"
-              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-              [(selection)]="selectedProducts" selectionMode="multiple" [rowHover]="true" dataKey="id">
-              <ng-template pTemplate="caption">
-                  <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
-                      <h5 class="m-0">Teachers</h5>
-                      <span class="block mt-2 md:mt-0 p-input-icon-left">
-                          <i class="pi pi-search"></i>
-                          <input pInputText type="text" (input)="onGlobalFilter(dt, $event)" placeholder="Search..."
-                              class="w-full sm:w-auto" />
-                      </span>
-                  </div>
-              </ng-template>
-              <ng-template pTemplate="header">
-                  <tr>
-                      <th style="width: 3rem">
-                          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-                      </th>
-                      <th pSortableColumn="code">Teacher Id <p-sortIcon field="code"></p-sortIcon></th>
-                      <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-                      <th>Image</th>
-                      <th pSortableColumn="price">Subject <p-sortIcon field="price"></p-sortIcon></th>
-                      <th pSortableColumn="category">Aadhar No <p-sortIcon field="category"></p-sortIcon></th>
-                     
-                      <th pSortableColumn="inventoryStatus">Mobile No<p-sortIcon field="inventoryStatus"></p-sortIcon>
-                        
-                      </th>
-                      <th pSortableColumn="inventoryStatus">Gender<p-sortIcon field="inventoryStatus"></p-sortIcon></th>
-                      <th></th>
-                      <th></th>
-                  </tr>
-              </ng-template>
-              <ng-template pTemplate="body" let-product>
-                  <tr>
-                      <td>
-                          <p-tableCheckbox [value]="teacher"></p-tableCheckbox>
-                      </td>
-                      <td style="width:14%; min-width:10rem;"><span class="p-column-title">Teacher Id</span>
-                          {{teacher.teacherid || teacher.id}}
-                      </td>
-                      <td style="width:14%; min-width:10rem;">
-                          <span class="p-column-title">Name</span>
-                          {{product.name}}
-                      </td>
-                      <td style="width:14%; min-width:10rem;"><span class="p-column-title">Image</span>
-                          <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.name" width="100"
-                              class="shadow-4" />
-                      </td>
-                      <td style="width:14%; min-width:8rem;">
-                          <span class="p-column-title">Price</span>
-                          {{product.price | currency:'USD'}}
-                      </td>
-                      <td style="width:14%; min-width:10rem;">
-                          <span class="p-column-title">Category</span>
-                          {{product.category}}
-                      </td>
-                      
-                      <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Status</span>
-                          
-                      </td>
-                      <td></td>
-                      <td>
-                          <div class="flex">
-                              <button pButton pRipple icon="pi pi-pencil"
-                                  class="p-button-rounded p-button-success mr-2"
-                                  (click)="editProduct(product)"></button>
-                              <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
-                                  (click)="deleteProduct(product)"></button>
-                          </div>
-                      </td>
-                  </tr>
-              </ng-template>
-          </p-table>
-      </div>
+            <p-table #dt [value]="teachers" [columns]="cols" responsiveLayout="scroll" [rows]="10"
+                [globalFilterFields]="['name','country.name','representative.name','status']" [rows]="10"
+                [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [(selection)]="selectedProducts" selectionMode="multiple" [rowHover]="true" dataKey="id">
+                <ng-template pTemplate="caption">
+                    <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
+                        <h5 class="m-0">Teachers</h5>
+                        <span class="block mt-2 md:mt-0 p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="onGlobalFilter(dt, $event)" placeholder="Search..."
+                                class="w-full sm:w-auto" />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th pSortableColumn="code">Teacher Id <p-sortIcon field="code"></p-sortIcon></th>
+                        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                        <th>Image</th>
+                        <th pSortableColumn="price">Subject <p-sortIcon field="price"></p-sortIcon></th>
+                        <th pSortableColumn="category">Aadhar No <p-sortIcon field="category"></p-sortIcon></th>
 
-      <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="New Teacher" [modal]="true"
-          class="p-fluid">
-          <ng-template pTemplate="content">
-              <app-c-teacher></app-c-teacher>
-          </ng-template>
-          <ng-template pTemplate="footer">
-              <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"
-                  (click)="hideDialog()"></button>
-              <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"
-                  (click)="saveProduct()"></button>
-          </ng-template>
-      </p-dialog>
+                        <th pSortableColumn="inventoryStatus">Mobile No<p-sortIcon field="inventoryStatus"></p-sortIcon>
 
-      <p-dialog [(visible)]="deleteProductDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
-          <div class="flex align-items-center justify-content-center">
-              <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
-              <span *ngIf="teacher">Are you sure you want to delete <b>{{teacher.name}}</b>?</span>
-          </div>
-          <ng-template pTemplate="footer">
-              <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No"
-                  (click)="deleteProductDialog = false"></button>
-              <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes"
-                  (click)="confirmDelete()"></button>
-          </ng-template>
-      </p-dialog>
+                        </th>
+                        <th pSortableColumn="inventoryStatus">Gender<p-sortIcon field="inventoryStatus"></p-sortIcon>
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-teacher>
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="teacher"></p-tableCheckbox>
+                        </td>
+                        <td style="width:14%; min-width:10rem;"><span class="p-column-title">Teacher Id</span>
+                            {{teacher.teacherid || teacher.id}}
+                        </td>
+                        <td style="width:14%; min-width:10rem;">
+                            <span class="p-column-title">Name</span>
+                            {{teacher.name}}
+                        </td>
+                        <td style="width:14%; min-width:10rem;"><span class="p-column-title">Image</span>
+                            <img [src]="'assets/demo/images/teacher/' + teacher.image" [alt]="teacher.name" width="70"
+                                class="shadow-4" />
+                        </td>
+                        <td style="width:14%; min-width:8rem;">
+                            <span class="p-column-title">Subject</span>
+                            {{teacher.subject }}
+                        </td>
+                        <td style="width:14%; min-width:10rem;">
+                            <span class="p-column-title">AadharNo</span>
+                            {{teacher.aadharno}}
+                        </td>
+                        <td style="width:14%; min-width:10rem;">
+                            <span class="p-column-title">Mobileno</span>
+                            {{teacher.mobileno}}
+                        </td>
+                        <td style="width:14%; min-width:10rem;">
+                            <span class="p-column-title">Gender</span>
+                            {{teacher.gender}}
+                        </td>
 
-      <p-dialog [(visible)]="deleteProductsDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
-          <div class="flex align-items-center justify-content-center">
-              <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
-              <span>Are you sure you want to delete selected products?</span>
-          </div>
-          <ng-template pTemplate="footer">
-              <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No"
-                  (click)="deleteProductsDialog = false"></button>
-              <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes"
-                  (click)="confirmDeleteSelected()"></button>
-          </ng-template>
-      </p-dialog>
-  </div>
+                        <!-- <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Status</span>
+
+                        </td> -->
+
+                        <td>
+                            <div class="flex">
+                                <button pButton pRipple icon="pi pi-pencil"
+                                    class="p-button-rounded p-button-success mr-2"
+                                    (click)="editProduct(teacher)"></button>
+                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                                    (click)="deleteProduct(teacher)"></button>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
+        <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="New Teacher" [modal]="true"
+            class="p-fluid">
+            <ng-template pTemplate="content">
+                <app-c-teacher></app-c-teacher>
+            </ng-template>
+            <ng-template pTemplate="footer">
+                <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"
+                    (click)="hideDialog()"></button>
+                <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"
+                    (click)="saveProduct()"></button>
+            </ng-template>
+        </p-dialog>
+
+        <p-dialog [(visible)]="deleteProductDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+            <div class="flex align-items-center justify-content-center">
+                <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+                <span *ngIf="teacher">Are you sure you want to delete <b>{{teacher.name}}</b>?</span>
+            </div>
+            <ng-template pTemplate="footer">
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No"
+                    (click)="deleteProductDialog = false"></button>
+                <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes"
+                    (click)="confirmDelete()"></button>
+            </ng-template>
+        </p-dialog>
+
+        <p-dialog [(visible)]="deleteProductsDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+            <div class="flex align-items-center justify-content-center">
+                <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+                <span>Are you sure you want to delete selected products?</span>
+            </div>
+            <ng-template pTemplate="footer">
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No"
+                    (click)="deleteProductsDialog = false"></button>
+                <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes"
+                    (click)="confirmDeleteSelected()"></button>
+            </ng-template>
+        </p-dialog>
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-      
-     
-

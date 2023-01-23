@@ -20,7 +20,7 @@ export class TeacherService {
   getTeacher() {
     return this.http.get<any>('assets/demo/data/teacher.json')
         .toPromise()
-        .then(res => res.data as Teacher[])
+        .then(res => res.Teacher as Teacher[])
         .then(data => data);
 }
 getProductsMixed() {
