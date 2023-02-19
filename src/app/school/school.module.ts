@@ -27,6 +27,7 @@ import { CardModule } from 'primeng/card';
 
 
 
+
 @NgModule({
   declarations: [
     VAccountsComponent,
@@ -54,7 +55,9 @@ import { CardModule } from 'primeng/card';
         InputNumberModule,
         DialogModule,
         ReactiveFormsModule,
-        CardModule
+        CardModule,
+      
+       
      
 
   ]
