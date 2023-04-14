@@ -14,6 +14,7 @@ import { PhotoService } from './demo/service/photo.service';
 import { VNewadmissionComponent } from './v-newadmission/v-newadmission.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Product } from './demo/product';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         AppLayoutModule,
         ReactiveFormsModule,
         FormsModule,
-        BrowserModule
+        BrowserModule,
+    
     ],
 
     providers:[
